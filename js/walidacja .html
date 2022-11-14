@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Walidacja</title>
+    <script src="./walidacja.js"></script>
+    <link rel="stylesheet" href="./walidacja.css">
+</head>
+<body>
+    <p> nazwisko</p>
+    <input type="text" id="lastName">
+    <span id="errorName"></span>
+    <p>email</p>
+    <input type="text" id="email">
+    <span id="errorEmail"></span>
+    <p>wiek</p>
+    <input type="number" id="age">
+    <span id="errorAge"></span>
+    <br><br>
+    <button onclick="check()">
+        Wyślij
+    </button>
+
+    <hr>
+    <span id="result"></span>
+</body>
+</html>
