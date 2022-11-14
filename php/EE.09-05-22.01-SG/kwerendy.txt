@@ -1,0 +1,10 @@
+zapytanie 1: SELECT haslo FROM uzytkownicy WHERE login = 'Justyna';
+
+zapytannie 2:SELECT COUNT(*) from dane;
+
+zapytanie 3:
+SELECT login, rok_urodz, przyjaciol, hobby, zdjecie FROM uzytkownicy INNER JOIN dane ON uzytkownicy.id=dane.id WHERE login = 'Justyna';
+
+zapytanie 4:
+ALTER table dane
+add COLUMN stanowisko varchar(255)
