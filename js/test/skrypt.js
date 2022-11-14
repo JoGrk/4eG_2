@@ -22,3 +22,13 @@ function countPrice(){
     
 
 }
+
+function changeFormat(color1) {
+    const formatText=document.getElementById('formatText');
+    const list=document.getElementById('list');
+
+    formatText.style.color=color1;
+
+    formatText.style.fontWeight=list.value;
+
+}
