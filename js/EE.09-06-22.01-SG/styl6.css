@@ -1,0 +1,21 @@
+body{
+    font-family: 'Georgia';
+}
+#lewy{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+    float: left;
+}
+#prawy{
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    overflow: scroll;
+}
+#stopka{
+    background-color: dimgray;
+    color: white;
+}
