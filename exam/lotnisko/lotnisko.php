@@ -27,19 +27,33 @@
 			<?php
 			
 			// skrypt 1
+			$link = new mysqli('localhost', 'root', '', '4eg_2_lotnisko');
+			$sql=" SELECT czas, kierunek, nr_rejsu, status_lotu FROM przyloty ORDER BY czas ASC;";
+			$result=$link-> query($sql);
+			while($row=$result->fetch_assoc()){
+				echo "<tr>";
+				foreach($row as $pole){
+					echo "<td> $pole </td>";
+				}
+				echo "</tr>";
+			}
+
+
+			$link-> close();
 
 			?>
 		</table>
 	</div>
 	<div id="stopka1">
 	<?php
-
-		if(!isset($_COOKIE['cookie'])){
-			setcookie('cookie', '1', 3600*2);
+       //setcookie('cook','1', 0);
+		if(!isset($_COOKIE['cook'])){
+			setcookie('cook', '1', time()+3600*2);
 			echo '<p><b> Dzień dobry! Strona lotniska uzywa ciasteczek</b></p>';
+			
 		}
 		else{
-			setcookie('cookie', '1', 3600*2);
+			setcookie('cook', '1', time()+3600*2);
 			echo '<p><i> Witaj ponownie na stronie lotniska </p></i>';
 		}
 

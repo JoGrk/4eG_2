@@ -38,8 +38,7 @@
         </form>
     </section>
     <section id="rightSection">
-        <section id="card">
-        <h3>Wizytówka</h3>
+        
         <?php
         $link = new mysqli('localhost','root','','4eg_2_portal');
 
@@ -50,6 +49,31 @@
             $result=$link->query($sql);
             if($result->num_rows>0){
                 //jest login w bazie
+                while ($row = $result -> fetch_assoc()) {
+                    if($row['haslo'] == $password){
+                        $sql = "SELECT login, rok_urodz, przyjaciol, hobby, zdjecie FROM uzytkownicy INNER JOIN dane ON uzytkownicy.id=dane.id WHERE login = '$login';";
+                        echo "<section id='card'>";
+                        echo "<h3>Wizytówka</h3>";
+                        $result = $link -> query($sql);
+                        while($row = $result -> fetch_assoc()){
+                            $age = DATE('Y') - $row['rok_urodz'];
+                            $friends = $row['przyjaciol'];
+                            $hobby = $row['hobby'];
+                            $photo = $row['zdjecie'];
+                            
+                            echo "<img src='$photo' alt='osoba';>";
+                            echo "<h4>$login ($age)</h4>";
+                            echo "<p>Hobby: $hobby</p>";
+                            echo "<h1><img src='icon-on.png'></h1>";
+                        }
+                        echo "<button type='submit' onclick='' id='cardButton'>Więcej informacji</button>";
+                        echo "</section>";
+
+                    }
+                    else{
+                        echo "Hasło nieprawidłowe";
+                    }
+                }
             }
             else{
                 echo "login nie istnieje";
@@ -59,8 +83,8 @@
 
         $link->close();
         ?>
-        <button type="submit" onclick="" id="cardButton"></button>
-        </section>   
+        
+          
 
     </section>
     <footer>
