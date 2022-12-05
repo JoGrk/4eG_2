@@ -1,0 +1,42 @@
+body{
+    font-family: Garamond;
+}
+#banner{
+    background-color: saddlebrown;
+    color: white;
+    text-align: center;
+    height: 50px;
+}
+#leftSection{
+    background-color: tan;
+    height: 500px;
+    width: 40%;
+    float: left;
+}
+#rightSection_1, #rightSection_2{
+    background-color: tan;
+    height: 250px;
+    width: 60%;
+    float: left;
+}
+#footer{
+    clear: both;
+    background-color: saddlebrown;
+    color: white;
+}
+form{
+    background-color: saddlebrown;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 300px;
+}
+form input{
+    margin: 5px;
+}
+
+p::before{
+    content: "STATUS: ";
+}
