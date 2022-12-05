@@ -1,0 +1,5 @@
+zap 1: SELECT imie, nazwisko, punkty from klienci order by punkty desc LIMIT 3;
+zap 2: SELECT nazwa, COUNT(*) as ilosc FROM typy INNER JOIN klienci on klienci.typy_id = typy.id GROUP BY nazwa;
+zap 3: SELECT zdjecie, imie, opinia FROM klienci INNER JOIN opinie ON klienci.id = opinie.klienci_id WHERE typy_id=2 OR typy_id=3;
+zap 4:
+ALTER TABLE klienci ADD adres VARCHAR(50);
