@@ -23,8 +23,42 @@
             <input type="submit" value="Zapisz" id="button">
         </form>
         <?php
-          
+          $link = new mysqli('localhost', 'root', '', '4eg_2_forum');
+            if(!empty($_POST['login'])&& !empty($_POST['password'])&& !empty($_POST['repeatPassword'])){
+                $login = $_POST['login'];
+                $password = $_POST['password'];
+                $passwordRepeat = $_POST['repeatPassword'];
+                $sql = "SELECT login FROM uzytkownicy;";
+                $selectUser = $link -> query($sql);
+                $userIsLogin = false;
+                while ($row = $selectUser -> fetch_array()) {
+                    $dLogin = $row['login'];
+                    if ($login == $dLogin) {
+                        $userIsLogin = true;
+                        break;
+                    }
+                }
+                if ($userIsLogin) {
+                    echo "<p> login występuje w bazie danych, konto nie zostało dodane </p>";
+                }
+                else if($password==$passwordRepeat){
+                    # sprawdzamy hasła
+                    # dodajemy uzytkownika
+                    $securePassword = sha1($password);
+                    $sql = "INSERT INTO uzytkownicy (login, haslo)   VALUES( '$login', '$securePassword');";
+                    $link -> query($sql);
+                    echo "<p>Konto zostalo dodano</p>";
 
+                }
+                else{
+                    echo "<p>hasła nie są takie same, konto nie zostało dodane</p>";
+                }
+
+            }
+            else{
+                echo "<p> Wypełnij wszystkie pola! </p>";
+            }
+          $link->close();
         ?>
     </section>
     <section id="rightSection_2">
