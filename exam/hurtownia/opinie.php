@@ -26,7 +26,7 @@
                 $imie=$row['imie'];
                 $opinia=$row['opinia'];
 
-                echo "<div id='review'>";
+                echo "<div class='review'>";
                 echo "<img src='$zdjecie' alt='klient'>";
                 echo "<blockquote>$opinia</blockquote>";
                 echo "<h4>$imie</h4>";
@@ -40,11 +40,11 @@
     </main>
 
     <footer>
-        <div id="footer1">
+        <div class="footer-div">
             <h3> Współpracują z nami:</h3>
             <a href="http://sklep.pl/">Sklep 1 </a>
         </div>
-        <div id="footer2">
+        <div class="footer-div">
             <h3> Nasi top klienci</h3>
             <ol>
                 <?php
@@ -62,11 +62,11 @@
             </ol>
 
         </div>
-        <div id="footer3">
+        <div class="footer-div">
             <h3> Skontaktuj się</h3>
             <p> telefon:111222333</p>
         </div>
-        <div id="footer4">
+        <div class="footer-div">
             <h3> Autor:000000000</h3>
         </div>
     </footer>

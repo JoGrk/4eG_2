@@ -16,17 +16,14 @@ footer {
   display: flex;
 }
 
-#footer1,
-#footer2,
-#footer3,
-#footer4 {
+.footer-div {
   background-color: tomato;
   color: white;
   width: 25%;
   height: 160px;
 }
 
-#review {
+.review {
   background-color: white;
   color: dimGrey;
   width: 60%;
