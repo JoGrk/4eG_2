@@ -1,0 +1,7 @@
+Zapytanie 1 : INSERT INTO odpowiedzi (konta_id,odpowiedz,Pytania_id) values (5,'Przyda ci się także wysoki stół, na którym postawisz pieska.',1);
+
+Zapytanie 2 : select nick, year(CURRENT_DATE())-rejestracja as latNaForum from konta where nick in ('Jacek','Tomek','Monika');
+
+Zapytanie 3 : select nick, postow, pytanie from konta inner join pytania on pytania.konta_id=konta.id where pytania.id =1;
+
+Zapytanie 4 : select odpowiedzi.id, odpowiedz, nick from konta inner join odpowiedzi on odpowiedzi.konta_id=konta.id where pytania_id=1;
